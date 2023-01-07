@@ -25,7 +25,7 @@ public partial class EncryptionDirectoryUserControl : UserControl
     public EncryptionDirectoryUserControl()
     {
         InitializeComponent();
-        ViewModel = (EncryptionDirectoryViewModel) DataContext;
+        ViewModel = (EncryptionDirectoryViewModel)DataContext;
     }
 
     public EncryptionDirectoryViewModel ViewModel { get; }
@@ -37,7 +37,7 @@ public partial class EncryptionDirectoryUserControl : UserControl
 
     private async void Button_OnClick(object sender, RoutedEventArgs e)
     {
-        var button = (Button) sender;
+        var button = (Button)sender;
         button.IsEnabled = false;
 
         if (string.IsNullOrEmpty(ViewModel.SourcePath) || !Directory.Exists(ViewModel.SourcePath))
@@ -80,7 +80,7 @@ public class EncryptionDirectoryViewModel : INotifyPropertyChanged
 {
     public DirectoryEncryption CreateDirectoryEncryption()
     {
-        var directoryEncryption = new DirectoryEncryption(Key.Select(t => (int) t).ToArray(), new DirectoryInfo(SourcePath), new DirectoryInfo(TargetPath));
+        var directoryEncryption = new DirectoryEncryption(Key.Select(t => (int)t).ToArray(), new DirectoryInfo(SourcePath), new DirectoryInfo(TargetPath));
         return directoryEncryption;
     }
 

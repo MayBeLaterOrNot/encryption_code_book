@@ -300,7 +300,7 @@ namespace Lindexi.Src.EncryptionAlgorithm
                 }
 
                 var length = n - a.Length;
-                return b.Length > length ? b[length] : (byte) 0;
+                return b.Length > length ? b[length] : (byte)0;
             }
         }
 
